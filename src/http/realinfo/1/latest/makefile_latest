@@ -5,7 +5,7 @@ PROC_NAME = realinfo_latest
 PROC_ROOT_NAME = phtrade2
 ## 输出文件名
 OUTPUT_FILE = /var/www/cgi-bin/${PROC_ROOT_NAME}/realinfo/1/$(PROC_NAME).fcgi
-LIBRARY_PATH = ./../../../../../library
+LIBRARY_PATH = ./../../../../../../mylib
 PUB_PATH = ../../../../pub
 FCGI_MODULE_PATH = ${PUB_PATH}/fcgimodule/
 ## 编译器
