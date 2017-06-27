@@ -31,12 +31,12 @@ INCLUDE_PATHS = -I$(LIBRARY_PATH)/public \
 
 ## 库
 LINK_PATHS =  -L/usr/local/libmemcached-1.0.7/lib/ -L/usr/lib64/mysql
-#LINK_LIBRARYS = -lmemcached -lmemcachedutil -lrt -lpthread  -liconv -lfcgi++ -lmysqlclient -lexpat -lcurl\
+#LINK_LIBRARYS = -lmemcached -lmemcachedutil -lrt -lpthread  -liconv -lfcgi -lmysqlclient -lexpat -lcurl\
 #					$(LIBRARY_PATH)/lib/libbreakpad_client.a $(LIBRARY_PATH)/lib/libhiredis.a $(LINK_CORE_PATH)
 
-#LINK_LIBRARYS = -lrt -lpthread  -liconv -lfcgi++ -lmysqlclient -lexpat -lcurl\
+#LINK_LIBRARYS = -lrt -lpthread  -liconv -lfcgi -lmysqlclient -lexpat -lcurl\
 #					$(LIBRARY_PATH)/lib/libbreakpad_client.a $(LIBRARY_PATH)/lib/libhiredis.a $(LINK_CORE_PATH)
-LINK_LIBRARYS = -lrt -lpthread  -lfcgi++ -lmysqlclient -lexpat -lcurl\
+LINK_LIBRARYS = -lrt -lpthread  -lfcgi -lmysqlclient -lexpat -lcurl\
 					 $(LINK_CORE_PATH)
 # 编译
 COMPILE = $(COMPILER) $(CPP_FLAG) $(INCLUDE_PATHS) -o $@

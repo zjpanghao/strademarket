@@ -16,7 +16,7 @@ BASE_CORE = ./../../../../basecore
 SO_DIR = ./../../bin/plugins
 STOCKSVC = ./../../plugins
 ARITHMETIC = $(USER_DIR)/arithmetic
-
+DEPENDS_DIR=/home/runner/depends
 THIRD_PATH = $(LIB_DIR)/public
 
 CUSTOM_THIRD_PATH = $(LIB_DIR)/third_party
@@ -34,6 +34,7 @@ CXXFLAGS += -g  -Wextra -pthread -shared -fPIC -DKUN_REDIS_POOL
 PLUGIN = $(SO_DIR)/realinfo/realinfo.so
                 
 INCLUDE_PATHS = -I/usr/local/libmemcached-1.0.7/include \
+                                -I$(DEPENDS_DIR)/include\
 				-I/usr/local/libmemcached/include\
 				-I/usr/local/freetds/include\
 				-I$(LIB_DIR)\
@@ -132,4 +133,4 @@ logic_unit.o config.o  \
 md5sum.o radom_in.o \
 $(CUSTOM_THIRD_PATH)/dmg_fp/lib/dmg_fp.a $(LIB_DIR)/base/lib/mybase.a $(LIB_DIR)/third_party/lib/libhiredis.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(LINK_PATHS) -lpthread -lexpat -lrt -lpthread -ldl -lmysqlclient -lcurl \
-$^ -o $@  -L $(SO_DIR)/../market_data  -Wl,-rpath=market_data  -lmarket  -L $(SO_DIR)/../stockshare -Wl,-rpath=stockshare -lstockshare
+$^ -o $@  -L $(DEPENDS_DIR)/lib/market_info  -Wl,-rpath=$(DEPENDS_DIR)/lib/market_info  -lmarket_info  -L $(SO_DIR)/../stockshare -Wl,-rpath=stockshare -lstockshare

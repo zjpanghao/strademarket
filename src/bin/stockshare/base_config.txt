@@ -1,5 +1,5 @@
 [mysql1]
-  host = 61.147.114.67
+  host = 127.0.0.1
   port = 3306
   user = stock
   pswd = stock
@@ -7,7 +7,7 @@
   pool_size = 1
 
 [mysql2]
-  host = 61.147.114.67
+  host = 127.0.0.1
   port = 3306
   user = stock
   pswd = stock

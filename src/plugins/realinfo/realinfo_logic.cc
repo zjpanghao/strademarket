@@ -12,8 +12,8 @@
 #include "realinfo/realinfo_pro.h"
 #include "stockshare/stock_base_info.h"
 #include "stockshare/stockshare_engine.h"
-#include "market_data/stock_price.h"
-#include "market_data/realinfo_util.h"
+#include "market_info/stock_price.h"
+#include "market_info/realinfo_util.h"
 #include <sstream>
 
 #define DEFAULT_CONFIG_PATH                    "./plugins/realinfo/realinfo_config.xml"
@@ -54,7 +54,7 @@ bool RealInfoLogic::Init() {
   bool r = false;
   srand(time(NULL));
   market_engine_ = stock_price::SingleStockPrice::GetInstance();
-  market_engine_->Init();
+  market_engine_->Init(true);
   stock_engine_ = stockshare::StockshareEngine::GetInstance();
   struct tm current;
   time_t now = time(NULL);
