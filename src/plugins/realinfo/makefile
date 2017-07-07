@@ -16,7 +16,8 @@ BASE_CORE = ./../../../../basecore
 SO_DIR = ./../../bin/plugins
 STOCKSVC = ./../../plugins
 ARITHMETIC = $(USER_DIR)/arithmetic
-DEPENDS_DIR=/home/runner/depends
+DEPENDS_DIR=./../../../../depends
+DEPENDS_RUN_DIR=./../../../depends
 THIRD_PATH = $(LIB_DIR)/public
 
 CUSTOM_THIRD_PATH = $(LIB_DIR)/third_party
@@ -133,4 +134,4 @@ logic_unit.o config.o  \
 md5sum.o radom_in.o \
 $(CUSTOM_THIRD_PATH)/dmg_fp/lib/dmg_fp.a $(LIB_DIR)/base/lib/mybase.a $(LIB_DIR)/third_party/lib/libhiredis.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(LINK_PATHS) -lpthread -lexpat -lrt -lpthread -ldl -lmysqlclient -lcurl \
-$^ -o $@  -L $(DEPENDS_DIR)/lib/market_info  -Wl,-rpath=$(DEPENDS_DIR)/lib/market_info  -lmarket_info  -L $(SO_DIR)/../stockshare -Wl,-rpath=stockshare -lstockshare
+$^ -o $@  -L $(DEPENDS_DIR)/lib/market_info  -Wl,-rpath=$(DEPENDS_RUN_DIR)/lib/market_info  -lmarket_info  -L $(SO_DIR)/../stockshare -Wl,-rpath=stockshare -lstockshare

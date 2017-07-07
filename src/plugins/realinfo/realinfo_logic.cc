@@ -145,7 +145,7 @@ bool RealInfoLogic::OnBroadcastClose(struct server *srv, const int socket) {
 }
 
 bool RealInfoLogic::OnIniTimer(struct server *srv) {
-   srv->add_time_task(srv, "realinfo", UPDATE_MARKET, 10, -1);
+  //  srv->add_time_task(srv, "realinfo", UPDATE_MARKET, 10, -1);
    srv->add_time_task(srv, "realinfo", UPDATE_STOCK, 3600, -1);
   return true;
 }

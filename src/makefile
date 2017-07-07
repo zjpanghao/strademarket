@@ -1,9 +1,7 @@
 sharelib=stockshare 
 plugins=realinfo
 
-all: $(sharelib) market_data $(plugins)
-market_data:
-	cd ./plugins/$@ && $(MAKE) clean && $(MAKE) 
+all: $(sharelib)  $(plugins)
 $(sharelib):
 	cd ./plugins/$@ && $(MAKE) clean && $(MAKE)
 $(plugins):

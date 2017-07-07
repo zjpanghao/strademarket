@@ -2,7 +2,7 @@
 ###############################################################################
 ## 程序名
 PROC_NAME = realinfo_today
-PROC_ROOT_NAME = phtrade2
+PROC_ROOT_NAME = strademarket
 ## 输出文件名
 OUTPUT_FILE = /var/www/cgi-bin/${PROC_ROOT_NAME}/realinfo/1/$(PROC_NAME).fcgi
 LIBRARY_PATH = ./../../../../../library
